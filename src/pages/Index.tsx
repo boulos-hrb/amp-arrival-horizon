@@ -14,7 +14,7 @@ const Index: React.FC = () => {
         {/* Logo */}
         <div className="mb-8">
           <img 
-            src="/lovable-uploads/c5475691-ecd3-4edd-9284-8092ad8caec1.png" 
+            src="/lovable-uploads/30938775-d9a5-49c9-a9de-a564b1a27229.png" 
             alt="Amp Logo" 
             className="h-16 md:h-20"
           />
