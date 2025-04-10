@@ -87,7 +87,9 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
             className={`bg-amp-button text-amp-green font-medium text-sm h-10 px-4 py-2 rounded-md ${isMobile ? 'w-full' : 'sm:rounded-l-none'} hover:bg-opacity-90 transition-all shadow-sm`}
             disabled={isLoading}
           >
-            {isLoading ? 'Sending...' : 'Notify Me'}
+            <span className="font-bold text-[1.15em] uppercase">
+              {isLoading ? 'Sending...' : 'Notify Me'}
+            </span>
           </Button>
         </div>
         <p className="text-amp-grey text-sm mt-2 mb-2">
