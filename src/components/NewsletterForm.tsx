@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { toast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -47,10 +46,6 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
       });
 
       if (response.ok) {
-        toast({
-          title: "Thanks for signing up!",
-          description: "We'll let you know when Amp launches.",
-        });
         setEmail('');
         setShowThankYou(true);
         // Hide thank you message after 5 seconds
