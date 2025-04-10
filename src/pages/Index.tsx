@@ -27,10 +27,21 @@ const Index: React.FC = () => {
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl font-light text-amp-grey max-w-2xl mx-auto mb-4 leading-relaxed">
-            The easiest way to book artists and manage live music events in the Middle East.
-            From tech riders to contracts — everything in one place.
-          </p>
+          <div className="max-w-2xl mx-auto mb-6">
+            <div className="flex items-start space-x-3 mb-3 text-left">
+              <div className="mt-1.5 flex-shrink-0 w-3 h-3 bg-[#FF4E00]"></div>
+              <p className="text-lg font-light text-amp-grey leading-relaxed">
+                The easiest way to book artists and manage live music events in the Middle East.
+              </p>
+            </div>
+            
+            <div className="flex items-start space-x-3 mb-3 text-left">
+              <div className="mt-1.5 flex-shrink-0 w-3 h-3 bg-[#FF4E00]"></div>
+              <p className="text-lg font-light text-amp-grey leading-relaxed">
+                From tech riders to contracts — everything in one place.
+              </p>
+            </div>
+          </div>
           
           <p className="text-sm text-amp-grey mb-8">
             Launching soon in MENA
