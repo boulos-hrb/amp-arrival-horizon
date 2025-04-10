@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -96,6 +92,43 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-amp-black text-amp-white font-sans;
+  }
+}
+
+.sound-waves {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 60px;
+}
+
+.sound-waves .bar {
+  background-color: rgba(255, 78, 0, 0.7);
+  width: 6px;
+  border-radius: 3px;
+  height: 30px;
+  transform-origin: bottom;
+}
+
+.form-input {
+  @apply bg-transparent border border-amp-grey/50 rounded-md px-4 py-2 w-full focus:border-amp-purple focus:outline-none text-amp-white placeholder:text-amp-grey/70;
+}
+
+.submit-button {
+  @apply bg-amp-button text-white font-semibold rounded-md px-6 py-2 transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg focus:outline-none;
+}
+
+@media (max-width: 640px) {
+  .form-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .form-container .form-input,
+  .form-container .submit-button {
+    width: 100%;
+    margin-top: 0.5rem;
   }
 }
