@@ -72,19 +72,19 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
   return (
     <div className={className}>
       <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-        <div className={`${isMobile ? 'flex flex-col space-y-3' : 'sm:flex'} form-container`}>
+        <div className={`${isMobile ? 'flex flex-col space-y-3' : 'sm:flex sm:space-x-3'} form-container`}>
           <input
             type="email"
             name="email"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={`form-input ${isMobile ? 'rounded-md' : 'sm:rounded-r-none'} mb-3 sm:mb-0`}
+            className={`form-input ${isMobile ? 'rounded-md' : 'sm:rounded-md'} mb-3 sm:mb-0`}
             disabled={isLoading}
           />
           <Button 
             type="submit" 
-            className={`bg-amp-button text-amp-green font-medium text-sm h-10 px-4 py-2 rounded-md ${isMobile ? 'w-full' : 'sm:rounded-l-none'} hover:bg-opacity-90 transition-all shadow-sm`}
+            className={`bg-amp-button text-amp-green font-medium text-sm h-10 px-4 py-2 rounded-md ${isMobile ? 'w-full' : ''} hover:bg-opacity-90 transition-all shadow-sm`}
             disabled={isLoading}
           >
             <span className="font-bold text-[1.15em] uppercase">
