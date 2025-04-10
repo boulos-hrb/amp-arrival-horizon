@@ -2,7 +2,6 @@
 import React from 'react';
 import NewsletterForm from '@/components/NewsletterForm';
 import SocialIcons from '@/components/SocialIcons';
-import SoundWaves from '@/components/SoundWaves';
 import AnimatedBackground from '@/components/AnimatedBackground';
 
 const Index: React.FC = () => {
@@ -19,9 +18,6 @@ const Index: React.FC = () => {
             className="h-16 md:h-20"
           />
         </div>
-        
-        {/* Sound Waves */}
-        <SoundWaves />
         
         {/* Main Content */}
         <div className="text-center mt-4 mb-12">
@@ -42,29 +38,6 @@ const Index: React.FC = () => {
           
           {/* Newsletter Form */}
           <NewsletterForm className="mt-8" />
-        </div>
-        
-        {/* Shape Accents */}
-        <div className="absolute -z-5 top-10 right-10 opacity-30 hidden md:block">
-          <img 
-            src="/lovable-uploads/b786b2ee-9e64-488a-9846-1b508ba16097.png" 
-            alt="Star Shape" 
-            className="w-16 h-16 animate-pulse"
-          />
-        </div>
-        <div className="absolute -z-5 bottom-20 left-10 opacity-20 hidden md:block">
-          <img 
-            src="/lovable-uploads/61062fce-b9c2-49d2-9ed2-5dcd55c77f63.png" 
-            alt="Circle Shape" 
-            className="w-20 h-20 animate-float-slow"
-          />
-        </div>
-        <div className="absolute -z-5 top-1/2 left-20 opacity-20 hidden md:block">
-          <img 
-            src="/lovable-uploads/759a595e-1135-4008-b4c7-0d6a609a6020.png" 
-            alt="Starburst Shape" 
-            className="w-16 h-16 animate-spin-slow"
-          />
         </div>
         
         {/* Social Icons */}
