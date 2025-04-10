@@ -88,12 +88,12 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
             {isLoading ? 'Sending...' : 'Notify Me'}
           </Button>
         </div>
-        <p className="text-amp-grey text-sm mt-2">
+        <p className="text-amp-grey text-sm mt-2 mb-2">
           Be the first to know when we launch.
         </p>
         
-        {/* Added images side by side horizontally */}
-        <div className="flex justify-center items-center space-x-4 mt-4">
+        {/* Added images side by side horizontally with reduced spacing */}
+        <div className="flex justify-center items-center space-x-4 mt-0">
           <img 
             src="/lovable-uploads/55f51c73-ff50-4405-9b95-be5469c05fe2.png" 
             alt="Purple Star" 

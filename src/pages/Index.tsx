@@ -12,7 +12,7 @@ const Index: React.FC = () => {
       
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center">
         {/* Main Content */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-4">
           {/* Amp Logo */}
           <div className="mb-3">
             <img 
@@ -52,7 +52,7 @@ const Index: React.FC = () => {
         <SocialIcons />
         
         {/* Footer */}
-        <div className="mt-auto pt-8 pb-6 text-amp-grey text-sm">
+        <div className="mt-2 pt-2 pb-6 text-amp-grey text-sm">
           &copy; {new Date().getFullYear()} Amp. All rights reserved.
         </div>
       </div>
