@@ -18,7 +18,7 @@ const Index: React.FC = () => {
             <img 
               src="/lovable-uploads/8dbec154-c472-451f-8fb6-f4f218ca2421.png" 
               alt="Amp Logo" 
-              className="h-20 mx-auto"
+              className="h-24 mx-auto" // Changed from h-20 to h-24 (20% larger)
             />
           </div>
           
