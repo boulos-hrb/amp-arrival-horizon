@@ -10,7 +10,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
       toast({
@@ -34,15 +34,34 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
 
     setIsLoading(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsLoading(false);
-      toast({
-        title: "Thanks for signing up!",
-        description: "We'll let you know when Amp launches.",
+    try {
+      // Send form data to Formspree
+      const response = await fetch("https://formspree.io/f/mwplarkw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
       });
-      setEmail('');
-    }, 1500);
+
+      if (response.ok) {
+        toast({
+          title: "Thanks for signing up!",
+          description: "We'll let you know when Amp launches.",
+        });
+        setEmail('');
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again later",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -50,6 +69,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
       <div className="sm:flex form-container">
         <input
           type="email"
+          name="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
