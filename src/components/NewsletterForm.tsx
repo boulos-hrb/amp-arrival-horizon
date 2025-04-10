@@ -96,8 +96,8 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
           Be the first to know when we launch.
         </p>
         
-        {/* Added images side by side horizontally with reduced spacing */}
-        <div className="flex justify-center items-center space-x-4 mt-0">
+        {/* Added images with more spacing on desktop */}
+        <div className={`flex justify-center items-center space-x-4 ${isMobile ? 'mt-0' : 'mt-6'}`}>
           <img 
             src="/lovable-uploads/55f51c73-ff50-4405-9b95-be5469c05fe2.png" 
             alt="Purple Star" 
