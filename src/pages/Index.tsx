@@ -14,7 +14,7 @@ const Index: React.FC = () => {
         {/* Logo */}
         <div className="mb-8">
           <img 
-            src="/lovable-uploads/a9d6551f-d7e7-45ac-8edd-b3c0ed89913e.png" 
+            src="/lovable-uploads/c5475691-ecd3-4edd-9284-8092ad8caec1.png" 
             alt="Amp Logo" 
             className="h-16 md:h-20"
           />
@@ -26,7 +26,6 @@ const Index: React.FC = () => {
         {/* Main Content */}
         <div className="text-center mt-4 mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
-            <span className="mr-2">🎤</span> 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white">
               Amp is Almost Here!
             </span>
@@ -43,6 +42,29 @@ const Index: React.FC = () => {
           
           {/* Newsletter Form */}
           <NewsletterForm className="mt-8" />
+        </div>
+        
+        {/* Shape Accents */}
+        <div className="absolute -z-5 top-10 right-10 opacity-30 hidden md:block">
+          <img 
+            src="/lovable-uploads/b786b2ee-9e64-488a-9846-1b508ba16097.png" 
+            alt="Star Shape" 
+            className="w-16 h-16 animate-pulse"
+          />
+        </div>
+        <div className="absolute -z-5 bottom-20 left-10 opacity-20 hidden md:block">
+          <img 
+            src="/lovable-uploads/61062fce-b9c2-49d2-9ed2-5dcd55c77f63.png" 
+            alt="Circle Shape" 
+            className="w-20 h-20 animate-float-slow"
+          />
+        </div>
+        <div className="absolute -z-5 top-1/2 left-20 opacity-20 hidden md:block">
+          <img 
+            src="/lovable-uploads/759a595e-1135-4008-b4c7-0d6a609a6020.png" 
+            alt="Starburst Shape" 
+            className="w-16 h-16 animate-spin-slow"
+          />
         </div>
         
         {/* Social Icons */}
