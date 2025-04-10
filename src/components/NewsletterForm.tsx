@@ -91,6 +91,25 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
         <p className="text-amp-grey text-sm mt-2">
           Be the first to know when we launch.
         </p>
+        
+        {/* Added images side by side horizontally */}
+        <div className="flex justify-center items-center space-x-4 mt-4">
+          <img 
+            src="/lovable-uploads/55f51c73-ff50-4405-9b95-be5469c05fe2.png" 
+            alt="Purple Star" 
+            className="w-16 h-16"
+          />
+          <img 
+            src="/lovable-uploads/1301ea30-2dee-4bd3-8510-d3c86070a1e3.png" 
+            alt="Orange Sound Bars" 
+            className="w-16 h-16"
+          />
+          <img 
+            src="/lovable-uploads/8cbac6f5-e89d-4726-9d75-2820c55152cf.png" 
+            alt="Green Star" 
+            className="w-16 h-16"
+          />
+        </div>
       </form>
       
       {/* Animated thank you message */}
