@@ -13,6 +13,15 @@ const Index: React.FC = () => {
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center">
         {/* Main Content */}
         <div className="text-center mb-12">
+          {/* Amp Logo */}
+          <div className="mb-3">
+            <img 
+              src="/lovable-uploads/8dbec154-c472-451f-8fb6-f4f218ca2421.png" 
+              alt="Amp Logo" 
+              className="h-20 mx-auto"
+            />
+          </div>
+          
           {/* Sound Waves Animation */}
           <SoundWaves />
           
