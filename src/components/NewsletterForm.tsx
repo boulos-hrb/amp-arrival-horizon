@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { toast } from "@/components/ui/use-toast";
+import { Button } from "@/components/ui/button";
 
 interface NewsletterFormProps {
   className?: string;
@@ -9,6 +10,7 @@ interface NewsletterFormProps {
 const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,6 +52,11 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
           description: "We'll let you know when Amp launches.",
         });
         setEmail('');
+        setShowThankYou(true);
+        // Hide thank you message after 5 seconds
+        setTimeout(() => {
+          setShowThankYou(false);
+        }, 5000);
       } else {
         throw new Error("Form submission failed");
       }
@@ -65,29 +72,41 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={`${className} max-w-md mx-auto`}>
-      <div className="sm:flex form-container">
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="form-input sm:rounded-r-none"
-          disabled={isLoading}
-        />
-        <button 
-          type="submit" 
-          className="submit-button sm:rounded-l-none"
-          disabled={isLoading}
-        >
-          {isLoading ? 'Sending...' : 'Notify Me'}
-        </button>
+    <div className={className}>
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+        <div className="sm:flex form-container">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="form-input sm:rounded-r-none"
+            disabled={isLoading}
+          />
+          <Button 
+            type="submit" 
+            className="bg-amp-button text-white font-medium text-sm h-10 px-4 py-2 rounded-md sm:rounded-l-none hover:bg-opacity-90 transition-all shadow-sm"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Sending...' : 'Notify Me'}
+          </Button>
+        </div>
+        <p className="text-amp-grey text-sm mt-2">
+          Be the first to know when we launch.
+        </p>
+      </form>
+      
+      {/* Animated thank you message */}
+      <div className={`mt-6 overflow-hidden transition-all duration-500 ease-in-out ${showThankYou ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <div className="bg-amp-black border border-amp-orange/30 rounded-md p-4 shadow-md animate-fade-in">
+          <div className="flex items-center justify-center space-x-2">
+            <span className="h-2 w-2 rounded-full bg-amp-orange animate-pulse"></span>
+            <p className="text-amp-green font-medium">Thanks for joining! We're excited to have you on board.</p>
+          </div>
+        </div>
       </div>
-      <p className="text-amp-grey text-sm mt-2">
-        Be the first to know when we launch.
-      </p>
-    </form>
+    </div>
   );
 };
 
