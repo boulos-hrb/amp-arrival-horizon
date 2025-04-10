@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { toast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -97,7 +98,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
         <div className="bg-amp-black border border-amp-orange/30 rounded-md p-4 shadow-md animate-fade-in">
           <div className="flex items-center justify-center space-x-2">
             <span className="h-2 w-2 rounded-full bg-amp-orange animate-pulse"></span>
-            <p className="text-amp-green font-medium">Thanks for joining! We're excited to have you on board.</p>
+            <p className="text-amp-green font-medium">Thanks for signing up - we will let you know once Amp is live!</p>
           </div>
         </div>
       </div>
