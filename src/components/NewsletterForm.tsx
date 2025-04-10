@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { toast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface NewsletterFormProps {
   className?: string;
@@ -11,6 +12,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
+  const isMobile = useIsMobile();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -70,19 +72,19 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
   return (
     <div className={className}>
       <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-        <div className="sm:flex form-container">
+        <div className={`${isMobile ? 'flex flex-col space-y-3' : 'sm:flex'} form-container`}>
           <input
             type="email"
             name="email"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="form-input sm:rounded-r-none"
+            className={`form-input ${isMobile ? 'rounded-md' : 'sm:rounded-r-none'} mb-3 sm:mb-0`}
             disabled={isLoading}
           />
           <Button 
             type="submit" 
-            className="bg-amp-button text-white font-medium text-sm h-10 px-4 py-2 rounded-md sm:rounded-l-none hover:bg-opacity-90 transition-all shadow-sm"
+            className={`bg-amp-button text-amp-green font-medium text-sm h-10 px-4 py-2 rounded-md ${isMobile ? 'w-full' : 'sm:rounded-l-none'} hover:bg-opacity-90 transition-all shadow-sm`}
             disabled={isLoading}
           >
             {isLoading ? 'Sending...' : 'Notify Me'}
