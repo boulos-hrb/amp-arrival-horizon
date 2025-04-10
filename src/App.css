@@ -78,6 +78,11 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes spin-slow-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
 .animate-float-slow {
   animation: float-slow 8s infinite ease-in-out;
 }
@@ -88,4 +93,8 @@
 
 .animate-spin-slow {
   animation: spin-slow 20s infinite linear;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 20s infinite linear;
 }
