@@ -1,7 +1,14 @@
 
 import React from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const AnimatedBackground: React.FC = () => {
+  const isMobile = useIsMobile();
+  
+  if (isMobile) {
+    return null; // Don't render anything on mobile
+  }
+  
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden flex items-center justify-center">
       <div className="relative w-full h-full">
