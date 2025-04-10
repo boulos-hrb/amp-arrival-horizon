@@ -93,8 +93,8 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
         </p>
       </form>
       
-      {/* Animated thank you message */}
-      <div className={`mt-6 overflow-hidden transition-all duration-500 ease-in-out ${showThankYou ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
+      {/* Animated thank you message - added mb-10 for mobile spacing */}
+      <div className={`mt-6 mb-10 md:mb-6 overflow-hidden transition-all duration-500 ease-in-out ${showThankYou ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="bg-amp-black border border-amp-orange/30 rounded-md p-4 shadow-md animate-fade-in">
           <div className="flex items-center justify-center space-x-2">
             <span className="h-2 w-2 rounded-full bg-amp-orange animate-pulse"></span>

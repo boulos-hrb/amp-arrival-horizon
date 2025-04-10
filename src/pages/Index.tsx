@@ -11,21 +11,21 @@ const Index: React.FC = () => {
       <AnimatedBackground />
       
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center">
-        {/* Logo */}
-        <div className="mb-8">
+        {/* Logo - increased size by 20% and reduced spacing between logo and sound waves */}
+        <div className="mb-2 md:mb-4">
           <img 
             src="/lovable-uploads/30938775-d9a5-49c9-a9de-a564b1a27229.png" 
             alt="Amp Logo" 
-            className="h-16 md:h-20"
+            className="h-[19.2px] md:h-24" // 20% increase from original h-16 and h-20
           />
         </div>
         
-        {/* Main Content */}
-        <div className="text-center mt-4 mb-12">
+        {/* Main Content - 15% smaller on mobile */}
+        <div className="text-center mt-2 md:mt-4 mb-12">
           {/* Sound Waves Animation */}
           <SoundWaves />
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
+          <h1 className="text-[34px] md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white">
               Amp is Almost Here!
             </span>
