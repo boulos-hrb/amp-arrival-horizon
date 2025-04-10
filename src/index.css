@@ -117,7 +117,7 @@
 }
 
 .submit-button {
-  @apply bg-amp-button text-white font-semibold rounded-md px-6 py-2 transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg focus:outline-none;
+  @apply bg-black text-white font-semibold rounded-md px-6 py-2 transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg focus:outline-none;
 }
 
 @media (max-width: 640px) {

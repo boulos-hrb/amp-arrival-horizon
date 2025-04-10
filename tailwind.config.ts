@@ -71,7 +71,7 @@ export default {
           black: "#1A1A1A",
           white: "#FFFFFF",
           grey: "#CCCCCC",
-          button: "#7e22ce",
+          button: "#000000",
         },
       },
       fontFamily: {

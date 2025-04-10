@@ -3,7 +3,7 @@ import React from 'react';
 
 const SoundWaves: React.FC = () => {
   return (
-    <div className="sound-waves opacity-50 flex items-center justify-center gap-1.5 h-16 my-6">
+    <div className="sound-waves opacity-70 flex items-center justify-center gap-1.5 h-16 my-6">
       <div className="bar h-10 animate-wave-1"></div>
       <div className="bar h-16 animate-wave-2"></div>
       <div className="bar h-8 animate-wave-3"></div>
@@ -14,12 +14,6 @@ const SoundWaves: React.FC = () => {
       <div className="bar h-16 animate-wave-3"></div>
       <div className="bar h-10 animate-wave-4"></div>
       <div className="bar h-14 animate-wave-5"></div>
-      
-      {/* Additional bars to create starburst effect */}
-      <div className="bar h-18 animate-wave-3"></div>
-      <div className="bar h-22 animate-wave-4"></div>
-      <div className="bar h-14 animate-wave-2"></div>
-      <div className="bar h-10 animate-wave-5"></div>
     </div>
   );
 };

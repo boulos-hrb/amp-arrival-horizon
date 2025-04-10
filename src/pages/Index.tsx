@@ -3,6 +3,7 @@ import React from 'react';
 import NewsletterForm from '@/components/NewsletterForm';
 import SocialIcons from '@/components/SocialIcons';
 import AnimatedBackground from '@/components/AnimatedBackground';
+import SoundWaves from '@/components/SoundWaves';
 
 const Index: React.FC = () => {
   return (
@@ -21,6 +22,9 @@ const Index: React.FC = () => {
         
         {/* Main Content */}
         <div className="text-center mt-4 mb-12">
+          {/* Sound Waves Animation */}
+          <SoundWaves />
+          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white">
               Amp is Almost Here!
