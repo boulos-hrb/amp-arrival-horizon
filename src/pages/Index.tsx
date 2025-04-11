@@ -1,4 +1,3 @@
-
 import React from 'react';
 import NewsletterForm from '@/components/NewsletterForm';
 import SocialIcons from '@/components/SocialIcons';
@@ -7,12 +6,9 @@ import SoundWaves from '@/components/SoundWaves';
 import ScrollingHeader from '@/components/ScrollingHeader';
 import { ASSETS } from '@/constants/animations';
 import { useIsMobile } from '@/hooks/use-mobile';
-
 const Index: React.FC = () => {
   const isMobile = useIsMobile();
-  
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
+  return <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
       <AnimatedBackground />
       <ScrollingHeader position="top" />
       <ScrollingHeader position="bottom" />
@@ -22,23 +18,19 @@ const Index: React.FC = () => {
         <div className="text-center mb-4 mt-16">
           {/* Amp Logo - responsive sizing for mobile and desktop with 15% size reduction */}
           <div className="mb-0">
-            <img 
-              src={ASSETS.IMAGES.AMP_LOGO} 
-              alt="Amp Logo" 
-              className={`${isMobile ? 'h-40 w-auto' : 'h-80 w-auto'} mx-auto`}
-            />
+            <img src={ASSETS.IMAGES.AMP_LOGO} alt="Amp Logo" className={`${isMobile ? 'h-40 w-auto' : 'h-80 w-auto'} mx-auto`} />
           </div>
           
           {/* Sound Waves Animation */}
           <SoundWaves />
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white text-xl">
               The Artist Owned booking platform
             </span>
           </h1>
           
-          <p className="text-sm text-amp-grey mb-8">
+          <p className="text-amp-grey mb-8 text-xl">
             Launching soon in MENA
           </p>
           
@@ -54,8 +46,6 @@ const Index: React.FC = () => {
           &copy; {new Date().getFullYear()} Amp. All rights reserved.
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
