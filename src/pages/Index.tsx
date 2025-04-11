@@ -4,6 +4,7 @@ import NewsletterForm from '@/components/NewsletterForm';
 import SocialIcons from '@/components/SocialIcons';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import SoundWaves from '@/components/SoundWaves';
+import { ASSETS } from '@/constants/animations';
 
 const Index: React.FC = () => {
   return (
@@ -16,9 +17,9 @@ const Index: React.FC = () => {
           {/* Amp Logo */}
           <div className="mb-3">
             <img 
-              src="/lovable-uploads/8dbec154-c472-451f-8fb6-f4f218ca2421.png" 
+              src={ASSETS.IMAGES.AMP_LOGO} 
               alt="Amp Logo" 
-              className="h-24 mx-auto" // Changed from h-20 to h-24 (20% larger)
+              className="h-24 mx-auto"
             />
           </div>
           

@@ -1,6 +1,35 @@
 
 import React from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { ANIMATIONS, ASSETS } from '@/constants/animations';
+
+interface AnimationProps {
+  src: string;
+  alt: string;
+  size: string;
+  position: string;
+  floatAnimation: string;
+  spinAnimation: string;
+}
+
+const AnimatedElement: React.FC<AnimationProps> = ({
+  src,
+  alt,
+  size,
+  position,
+  floatAnimation,
+  spinAnimation
+}) => {
+  return (
+    <div className={`absolute ${position} ${floatAnimation}`}>
+      <img 
+        src={src} 
+        alt={alt} 
+        className={`${size} opacity-50 ${spinAnimation}`}
+      />
+    </div>
+  );
+};
 
 const AnimatedBackground: React.FC = () => {
   const isMobile = useIsMobile();
@@ -9,26 +38,39 @@ const AnimatedBackground: React.FC = () => {
     return null; // Don't render anything on mobile
   }
   
+  const animatedElements = [
+    {
+      src: ASSETS.IMAGES.GREEN_STAR,
+      alt: "Green Star",
+      size: "w-16 h-16",
+      position: "top-[20%] right-[15%]",
+      floatAnimation: ANIMATIONS.FLOAT.SLOW,
+      spinAnimation: ANIMATIONS.SPIN.SLOW
+    },
+    {
+      src: ASSETS.IMAGES.PURPLE_STAR,
+      alt: "Purple Star",
+      size: "w-12 h-12", 
+      position: "bottom-[30%] left-[10%]",
+      floatAnimation: ANIMATIONS.FLOAT.SLOW_REVERSE,
+      spinAnimation: ANIMATIONS.SPIN.SLOW_REVERSE
+    }
+  ];
+  
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden flex items-center justify-center">
       <div className="relative w-full h-full">
-        {/* Green star shape with rotation animation */}
-        <div className="absolute top-[20%] right-[15%] animate-float-slow">
-          <img 
-            src="/lovable-uploads/088b7bce-a01e-4e03-85d3-54be61826f4f.png" 
-            alt="Green Star" 
-            className="w-16 h-16 opacity-50 animate-spin-slow"
+        {animatedElements.map((element, index) => (
+          <AnimatedElement 
+            key={index}
+            src={element.src}
+            alt={element.alt}
+            size={element.size}
+            position={element.position}
+            floatAnimation={element.floatAnimation}
+            spinAnimation={element.spinAnimation}
           />
-        </div>
-        
-        {/* Purple star shape with opposite rotation */}
-        <div className="absolute bottom-[30%] left-[10%] animate-float-slow-reverse">
-          <img 
-            src="/lovable-uploads/8109b790-2977-4110-aec2-cc8a02bc7e3f.png" 
-            alt="Purple Star" 
-            className="w-12 h-12 opacity-30 animate-spin-slow-reverse"
-          />
-        </div>
+        ))}
       </div>
     </div>
   );

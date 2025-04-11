@@ -1,73 +1,50 @@
 
-import React, { useState } from 'react';
-import { toast } from "@/components/ui/use-toast";
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useNewsletterForm } from "@/hooks/use-newsletter-form";
+import { ASSETS } from "@/constants/animations";
 
 interface NewsletterFormProps {
   className?: string;
 }
 
-const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
-  const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
+const ThankYouMessage = () => (
+  <div className="bg-amp-black border border-amp-orange/30 rounded-md p-4 shadow-md animate-fade-in">
+    <div className="flex items-center justify-center space-x-2">
+      <span className="h-2 w-2 rounded-full bg-amp-orange animate-pulse"></span>
+      <p className="text-amp-green font-medium">Thanks for signing up - we will let you know once Amp is live!</p>
+    </div>
+  </div>
+);
+
+const FormImages = () => {
   const isMobile = useIsMobile();
+  
+  return (
+    <div className={`flex justify-center items-center space-x-4 ${isMobile ? 'mt-0' : 'mt-6'}`}>
+      <img 
+        src={ASSETS.IMAGES.PURPLE_ICON} 
+        alt="Purple Star" 
+        className="w-16 h-16"
+      />
+      <img 
+        src={ASSETS.IMAGES.ORANGE_BARS} 
+        alt="Orange Sound Bars" 
+        className="w-16 h-16"
+      />
+      <img 
+        src={ASSETS.IMAGES.GREEN_ICON} 
+        alt="Green Star" 
+        className="w-16 h-16"
+      />
+    </div>
+  );
+};
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) {
-      toast({
-        title: "Email required",
-        description: "Please enter your email address",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    // Email validation regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsLoading(true);
-    
-    try {
-      // Send form data to Formspree
-      const response = await fetch("https://formspree.io/f/mwplarkw", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      if (response.ok) {
-        setEmail('');
-        setShowThankYou(true);
-        // Hide thank you message after 5 seconds
-        setTimeout(() => {
-          setShowThankYou(false);
-        }, 5000);
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch (error) {
-      toast({
-        title: "Something went wrong",
-        description: "Please try again later",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
+  const { email, isLoading, showThankYou, setEmail, handleSubmit } = useNewsletterForm();
+  const isMobile = useIsMobile();
 
   return (
     <div className={className}>
@@ -96,34 +73,12 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
           Be the first to know when we launch.
         </p>
         
-        {/* Added images with more spacing on desktop */}
-        <div className={`flex justify-center items-center space-x-4 ${isMobile ? 'mt-0' : 'mt-6'}`}>
-          <img 
-            src="/lovable-uploads/55f51c73-ff50-4405-9b95-be5469c05fe2.png" 
-            alt="Purple Star" 
-            className="w-16 h-16"
-          />
-          <img 
-            src="/lovable-uploads/1301ea30-2dee-4bd3-8510-d3c86070a1e3.png" 
-            alt="Orange Sound Bars" 
-            className="w-16 h-16"
-          />
-          <img 
-            src="/lovable-uploads/8cbac6f5-e89d-4726-9d75-2820c55152cf.png" 
-            alt="Green Star" 
-            className="w-16 h-16"
-          />
-        </div>
+        <FormImages />
       </form>
       
       {/* Animated thank you message */}
       <div className={`mt-6 overflow-hidden transition-all duration-500 ease-in-out ${showThankYou ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className="bg-amp-black border border-amp-orange/30 rounded-md p-4 shadow-md animate-fade-in">
-          <div className="flex items-center justify-center space-x-2">
-            <span className="h-2 w-2 rounded-full bg-amp-orange animate-pulse"></span>
-            <p className="text-amp-green font-medium">Thanks for signing up - we will let you know once Amp is live!</p>
-          </div>
-        </div>
+        <ThankYouMessage />
       </div>
     </div>
   );
