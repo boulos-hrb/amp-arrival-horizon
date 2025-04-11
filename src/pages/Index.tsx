@@ -14,9 +14,9 @@ const Index: React.FC = () => {
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
       <AnimatedBackground />
       
-      {/* Mobile corner star - adjusted position and z-index */}
+      {/* Mobile corner star - adjusted position to be more to the right */}
       {isMobile && (
-        <div className="fixed top-0 left-0 z-50 w-24 h-24 -translate-x-1/4 -translate-y-1/4 rotate-12">
+        <div className="fixed top-0 left-8 z-50 w-24 h-24 -translate-y-1/4 rotate-12">
           <img 
             src={ASSETS.IMAGES.CORNER_STAR} 
             alt="Corner Star" 
