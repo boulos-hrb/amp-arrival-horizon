@@ -27,7 +27,7 @@ const Index: React.FC = () => {
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white text-xl">
-              The Artist Owned booking platform
+              The Artist Owned Booking Platform
             </span>
           </h1>
           
