@@ -65,7 +65,7 @@ const AnimatedBackground: React.FC = () => {
       type: 'star' as const,
       position: '-top-10 -left-10', 
       color: 'bg-amp-green',
-      size: 'w-32 h-32',
+      size: 'w-44 h-44', // Increased from w-32 h-32 (40% larger)
       imageSrc: ASSETS.IMAGES.PURPLE_ICON
     },
     {
