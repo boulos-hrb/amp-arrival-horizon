@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -18,6 +17,7 @@ const ThankYouMessage = () => (
   </div>
 );
 
+// We're keeping the FormImages component definition but not using it
 const FormImages = () => {
   const isMobile = useIsMobile();
   
@@ -73,7 +73,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
           Be the first to know when we launch.
         </p>
         
-        <FormImages />
+        {/* Removed the FormImages component from here */}
       </form>
       
       {/* Animated thank you message */}
