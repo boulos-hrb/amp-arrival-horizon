@@ -4,6 +4,7 @@ import NewsletterForm from '@/components/NewsletterForm';
 import SocialIcons from '@/components/SocialIcons';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import SoundWaves from '@/components/SoundWaves';
+import ScrollingHeader from '@/components/ScrollingHeader';
 import { ASSETS } from '@/constants/animations';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -13,6 +14,8 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
       <AnimatedBackground />
+      <ScrollingHeader position="top" />
+      <ScrollingHeader position="bottom" />
       
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center">
         {/* Main Content */}

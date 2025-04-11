@@ -31,12 +31,54 @@ const AnimatedElement: React.FC<AnimationProps> = ({
   );
 };
 
+const CornerElement: React.FC<{
+  type: 'circle' | 'square' | 'star';
+  position: string;
+  color: string;
+  size: string;
+}> = ({ type, position, color, size }) => {
+  return (
+    <div className={`absolute ${position}`}>
+      {type === 'circle' && (
+        <div className={`rounded-full ${size} ${color} opacity-70`}></div>
+      )}
+      {type === 'square' && (
+        <div className={`${size} ${color} opacity-70`}></div>
+      )}
+      {type === 'star' && (
+        <img 
+          src={ASSETS.IMAGES.GREEN_STAR} 
+          alt="Corner Star" 
+          className={`${size} opacity-70`}
+        />
+      )}
+    </div>
+  );
+};
+
 const AnimatedBackground: React.FC = () => {
   const isMobile = useIsMobile();
   
-  if (isMobile) {
-    return null; // Don't render anything on mobile
-  }
+  const cornerElements = [
+    {
+      type: 'star' as const,
+      position: '-top-10 -left-10', 
+      color: 'bg-amp-green',
+      size: 'w-32 h-32'
+    },
+    {
+      type: 'square' as const,
+      position: '-bottom-16 -left-16',
+      color: 'bg-amp-purple',
+      size: 'w-40 h-40'
+    },
+    {
+      type: 'circle' as const,
+      position: '-bottom-20 -right-20',
+      color: 'bg-amp-orange',
+      size: 'w-48 h-48'
+    }
+  ];
   
   const animatedElements = [
     {
@@ -60,7 +102,19 @@ const AnimatedBackground: React.FC = () => {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden flex items-center justify-center">
       <div className="relative w-full h-full">
-        {animatedElements.map((element, index) => (
+        {/* Corner elements - show on both mobile and desktop */}
+        {cornerElements.map((element, index) => (
+          <CornerElement 
+            key={`corner-${index}`}
+            type={element.type}
+            position={element.position}
+            color={element.color}
+            size={element.size}
+          />
+        ))}
+        
+        {/* Animated elements - only show on desktop */}
+        {!isMobile && animatedElements.map((element, index) => (
           <AnimatedElement 
             key={index}
             src={element.src}

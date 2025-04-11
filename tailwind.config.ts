@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -125,6 +124,10 @@ export default {
             transform: "translateY(0)"
           }
         },
+        "marquee": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" }
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -136,6 +139,7 @@ export default {
         "wave-5": "wave-5 2.1s infinite ease-in-out",
         "pulse-slow": "pulse-slow 3s infinite",
         "fade-in": "fade-in 0.5s ease-out",
+        "marquee": "marquee 20s linear infinite",
       },
     },
   },
