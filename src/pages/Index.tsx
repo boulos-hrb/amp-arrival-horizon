@@ -7,6 +7,7 @@ import SoundWaves from '@/components/SoundWaves';
 import ScrollingHeader from '@/components/ScrollingHeader';
 import { ASSETS } from '@/constants/animations';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const Index: React.FC = () => {
   const isMobile = useIsMobile();
   return <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
@@ -22,9 +23,6 @@ const Index: React.FC = () => {
             <img src={ASSETS.IMAGES.AMP_LOGO} alt="Amp Logo" className={`${isMobile ? 'h-40 w-auto' : 'h-80 w-auto'} mx-auto`} />
           </div>
           
-          {/* Sound Waves Animation */}
-          <SoundWaves />
-          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white text-xl">
               The Artist Owned Booking Platform
@@ -34,6 +32,9 @@ const Index: React.FC = () => {
           <p className="text-amp-grey mb-8 text-xl">
             LOADING........
           </p>
+          
+          {/* Sound Waves Animation - moved below the Loading text */}
+          <SoundWaves />
           
           {/* Newsletter Form */}
           <NewsletterForm className="mt-8" />
@@ -49,4 +50,5 @@ const Index: React.FC = () => {
       </div>
     </div>;
 };
+
 export default Index;
