@@ -71,7 +71,7 @@ const AnimatedBackground: React.FC = () => {
     {
       type: 'square' as const,
       position: '-bottom-16 -left-16',
-      color: 'bg-amp-purple',
+      color: 'bg-[#2F4ACD]', // Changed from bg-amp-purple to #2F4ACD
       size: 'w-40 h-40'
     },
     {
