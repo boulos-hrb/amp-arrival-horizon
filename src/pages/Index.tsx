@@ -1,4 +1,3 @@
-
 import React from 'react';
 import NewsletterForm from '@/components/NewsletterForm';
 import SocialIcons from '@/components/SocialIcons';
@@ -14,12 +13,12 @@ const Index: React.FC = () => {
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center">
         {/* Main Content */}
         <div className="text-center mb-4">
-          {/* Amp Logo */}
+          {/* Amp Logo - doubled in size from h-24 to h-48 */}
           <div className="mb-3">
             <img 
               src={ASSETS.IMAGES.AMP_LOGO} 
               alt="Amp Logo" 
-              className="h-24 mx-auto"
+              className="h-48 mx-auto"
             />
           </div>
           
@@ -28,7 +27,7 @@ const Index: React.FC = () => {
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white">
-              Amp is Almost Here!
+              The Artist Owned booking platform
             </span>
           </h1>
           
