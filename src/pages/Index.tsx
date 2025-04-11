@@ -23,13 +23,13 @@ const Index: React.FC = () => {
             <img src={ASSETS.IMAGES.AMP_LOGO} alt="Amp Logo" className={`${isMobile ? 'h-40 w-auto' : 'h-40 w-auto'} mx-auto`} />
           </div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white text-xl">
-              The Artist Owned Booking Platform
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-gotham font-bold mb-4 tracking-tight">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amp-green to-amp-white text-xl font-gotham font-bold">
+              THE ARTIST OWNED BOOKING PLATFORM
             </span>
           </h1>
           
-          <p className="text-amp-grey mb-1 text-xl">
+          <p className="text-amp-grey mb-1 text-xl font-gotham font-bold">
             LOADING........
           </p>
           
@@ -44,7 +44,7 @@ const Index: React.FC = () => {
         <SocialIcons />
         
         {/* Footer */}
-        <div className="mt-2 pt-2 pb-6 text-amp-grey text-sm">
+        <div className="mt-2 pt-2 pb-6 text-amp-grey text-sm font-gotham font-bold">
           &copy; {new Date().getFullYear()} Amp. All rights reserved.
         </div>
       </div>

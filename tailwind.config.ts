@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Montserrat", "system-ui", "sans-serif"],
+        gotham: ["Montserrat", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -72,9 +77,6 @@ export default {
           grey: "#CCCCCC",
           button: "#000000",
         },
-      },
-      fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -1,5 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Update the font import to use Montserrat as our Gotham Bold alternative */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -88,14 +89,15 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border font-gotham font-bold;
   }
 
   body {
-    @apply bg-amp-black text-amp-white font-sans;
+    @apply bg-amp-black text-amp-white font-gotham font-bold;
   }
 }
 
+/* Keep existing CSS for sound-waves and other components */
 .sound-waves {
   display: flex;
   align-items: center;
@@ -117,7 +119,7 @@
 }
 
 .submit-button {
-  @apply bg-black text-white font-semibold rounded-md px-6 py-2 transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg focus:outline-none;
+  @apply bg-black text-white font-bold rounded-md px-6 py-2 transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg focus:outline-none;
 }
 
 @media (max-width: 640px) {

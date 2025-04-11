@@ -13,7 +13,7 @@ const ThankYouMessage = () => (
   <div className="bg-amp-black border border-amp-orange/30 rounded-md p-4 shadow-md animate-fade-in">
     <div className="flex items-center justify-center space-x-2">
       <span className="h-2 w-2 rounded-full bg-amp-orange animate-pulse"></span>
-      <p className="text-amp-green font-medium">Thanks for signing up - we will let you know once Amp is live!</p>
+      <p className="text-amp-green font-gotham font-bold">Thanks for signing up - we will let you know once Amp is live!</p>
     </div>
   </div>
 );
@@ -50,7 +50,7 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
   return (
     <div className={className}>
       <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-        <p className="text-amp-grey text-sm mb-2">
+        <p className="text-amp-grey text-sm mb-2 font-gotham font-bold">
           Be the first to know when we launch.
         </p>
         
@@ -61,15 +61,15 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={`form-input ${isMobile ? 'rounded-md' : 'sm:rounded-md'} mb-3 sm:mb-0`}
+            className={`form-input ${isMobile ? 'rounded-md' : 'sm:rounded-md'} mb-3 sm:mb-0 font-gotham font-bold`}
             disabled={isLoading}
           />
           <Button 
             type="submit" 
-            className={`bg-amp-button text-amp-green font-medium text-sm h-10 px-4 py-2 rounded-md ${isMobile ? 'w-full' : ''} hover:bg-opacity-90 transition-all shadow-sm`}
+            className={`bg-amp-button text-amp-green font-gotham font-bold text-sm h-10 px-4 py-2 rounded-md ${isMobile ? 'w-full' : ''} hover:bg-opacity-90 transition-all shadow-sm`}
             disabled={isLoading}
           >
-            <span className="font-bold text-[1.15em] uppercase">
+            <span className="font-gotham font-bold text-[1.15em] uppercase">
               {isLoading ? 'Sending...' : 'Sign me Up'}
             </span>
           </Button>
