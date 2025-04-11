@@ -29,15 +29,15 @@ const Index: React.FC = () => {
             </span>
           </h1>
           
-          <p className="text-amp-grey mb-8 text-xl">
+          <p className="text-amp-grey mb-1 text-xl">
             LOADING........
           </p>
           
-          {/* Sound Waves Animation - moved below the Loading text */}
+          {/* Sound Waves Animation - reduced margin */}
           <SoundWaves />
           
-          {/* Newsletter Form */}
-          <NewsletterForm className="mt-8" />
+          {/* Newsletter Form - reduced top margin */}
+          <NewsletterForm className="mt-3" />
         </div>
         
         {/* Social Icons */}
