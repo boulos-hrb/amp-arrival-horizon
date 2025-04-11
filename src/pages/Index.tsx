@@ -14,6 +14,17 @@ const Index: React.FC = () => {
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
       <AnimatedBackground />
       
+      {/* Mobile corner star */}
+      {isMobile && (
+        <div className="fixed top-0 left-0 z-10 w-24 h-24 -translate-x-1/3 -translate-y-1/3 rotate-12">
+          <img 
+            src={ASSETS.IMAGES.CORNER_STAR} 
+            alt="Corner Star" 
+            className="w-full h-full"
+          />
+        </div>
+      )}
+      
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center">
         {/* Main Content */}
         <div className="text-center mb-4 mt-16">
