@@ -36,7 +36,8 @@ const CornerElement: React.FC<{
   position: string;
   color: string;
   size: string;
-}> = ({ type, position, color, size }) => {
+  imageSrc?: string;
+}> = ({ type, position, color, size, imageSrc }) => {
   return (
     <div className={`absolute ${position}`}>
       {type === 'circle' && (
@@ -47,7 +48,7 @@ const CornerElement: React.FC<{
       )}
       {type === 'star' && (
         <img 
-          src={ASSETS.IMAGES.GREEN_STAR} 
+          src={imageSrc || ASSETS.IMAGES.GREEN_STAR} 
           alt="Corner Star" 
           className={`${size} opacity-70`}
         />
@@ -64,7 +65,8 @@ const AnimatedBackground: React.FC = () => {
       type: 'star' as const,
       position: '-top-10 -left-10', 
       color: 'bg-amp-green',
-      size: 'w-32 h-32'
+      size: 'w-32 h-32',
+      imageSrc: ASSETS.IMAGES.PURPLE_ICON
     },
     {
       type: 'square' as const,
@@ -110,6 +112,7 @@ const AnimatedBackground: React.FC = () => {
             position={element.position}
             color={element.color}
             size={element.size}
+            imageSrc={element.imageSrc}
           />
         ))}
         
