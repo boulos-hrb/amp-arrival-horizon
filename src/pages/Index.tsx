@@ -5,8 +5,11 @@ import SocialIcons from '@/components/SocialIcons';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import SoundWaves from '@/components/SoundWaves';
 import { ASSETS } from '@/constants/animations';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index: React.FC = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4">
       <AnimatedBackground />
@@ -14,16 +17,16 @@ const Index: React.FC = () => {
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center">
         {/* Main Content */}
         <div className="text-center mb-4">
-          {/* Amp Logo - quadrupled in size from original h-24 to h-96 */}
+          {/* Amp Logo - responsive sizing for mobile and desktop */}
           <div className="mb-0">
             <img 
               src={ASSETS.IMAGES.AMP_LOGO} 
               alt="Amp Logo" 
-              className="h-96 mx-auto"
+              className={`${isMobile ? 'h-48 w-auto' : 'h-96 w-auto'} mx-auto`}
             />
           </div>
           
-          {/* Sound Waves Animation - reduced vertical space with my-2 instead of my-6 */}
+          {/* Sound Waves Animation */}
           <SoundWaves />
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
