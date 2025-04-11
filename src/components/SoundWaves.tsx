@@ -3,7 +3,7 @@ import React from 'react';
 
 const SoundWaves: React.FC = () => {
   return (
-    <div className="sound-waves opacity-70 flex items-center justify-center gap-1.5 h-12 my-2">
+    <div className="sound-waves opacity-70 flex items-center justify-center gap-1.5 h-12 mt-0 mb-2">
       <div className="bar h-10 animate-wave-1"></div>
       <div className="bar h-16 animate-wave-2"></div>
       <div className="bar h-8 animate-wave-3"></div>
