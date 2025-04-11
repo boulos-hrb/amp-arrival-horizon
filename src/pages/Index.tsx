@@ -15,7 +15,7 @@ const Index: React.FC = () => {
         {/* Main Content */}
         <div className="text-center mb-4">
           {/* Amp Logo - quadrupled in size from original h-24 to h-96 */}
-          <div className="mb-1">
+          <div className="mb-0">
             <img 
               src={ASSETS.IMAGES.AMP_LOGO} 
               alt="Amp Logo" 
