@@ -14,13 +14,17 @@ const ScrollingHeader: React.FC<ScrollingHeaderProps> = ({ position }) => {
   
   return (
     <div className={`fixed ${positionClasses} ${baseClasses} z-10`}>
-      <div className="flex animate-[marquee_20s_linear_infinite]">
-        <span className="text-xs uppercase tracking-wider text-amp-green font-semibold inline-block pr-4">
-          {repeatedText}
-        </span>
-        <span className="text-xs uppercase tracking-wider text-amp-green font-semibold inline-block pr-4">
-          {repeatedText}
-        </span>
+      <div className="flex">
+        <div className="animate-[marquee_20s_linear_infinite]">
+          <span className="text-xs uppercase tracking-wider text-amp-green font-semibold">
+            {repeatedText}
+          </span>
+        </div>
+        <div className="animate-[marquee_20s_linear_infinite] absolute">
+          <span className="text-xs uppercase tracking-wider text-amp-green font-semibold">
+            {repeatedText}
+          </span>
+        </div>
       </div>
     </div>
   );
