@@ -78,7 +78,7 @@ const AnimatedBackground: React.FC = () => {
       type: 'circle' as const,
       position: '-bottom-20 -right-20',
       color: 'bg-amp-orange',
-      size: 'w-48 h-48'
+      size: 'w-62 h-62' // Increased from w-48 h-48 (30% larger)
     }
   ];
   
