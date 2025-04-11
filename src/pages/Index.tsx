@@ -18,9 +18,9 @@ const Index: React.FC = () => {
       <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center">
         {/* Main Content */}
         <div className="text-center mb-4 mt-16">
-          {/* Amp Logo - responsive sizing for mobile and desktop with 15% size reduction */}
+          {/* Amp Logo - responsive sizing for mobile and desktop with 50% size reduction on desktop */}
           <div className="mb-0">
-            <img src={ASSETS.IMAGES.AMP_LOGO} alt="Amp Logo" className={`${isMobile ? 'h-40 w-auto' : 'h-80 w-auto'} mx-auto`} />
+            <img src={ASSETS.IMAGES.AMP_LOGO} alt="Amp Logo" className={`${isMobile ? 'h-40 w-auto' : 'h-40 w-auto'} mx-auto`} />
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight">
