@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -49,6 +50,10 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
   return (
     <div className={className}>
       <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+        <p className="text-amp-grey text-sm mb-2">
+          Be the first to know when we launch.
+        </p>
+        
         <div className={`${isMobile ? 'flex flex-col space-y-3' : 'sm:flex sm:space-x-3'} form-container`}>
           <input
             type="email"
@@ -65,13 +70,10 @@ const NewsletterForm: React.FC<NewsletterFormProps> = ({ className }) => {
             disabled={isLoading}
           >
             <span className="font-bold text-[1.15em] uppercase">
-              {isLoading ? 'Sending...' : 'Notify Me'}
+              {isLoading ? 'Sending...' : 'Sign me Up'}
             </span>
           </Button>
         </div>
-        <p className="text-amp-grey text-sm mt-2 mb-2">
-          Be the first to know when we launch.
-        </p>
         
         {/* Removed the FormImages component from here */}
       </form>
