@@ -1,3 +1,4 @@
+
 import React from 'react';
 import NewsletterForm from '@/components/NewsletterForm';
 import SocialIcons from '@/components/SocialIcons';
@@ -31,7 +32,7 @@ const Index: React.FC = () => {
           </h1>
           
           <p className="text-amp-grey mb-8 text-xl">
-            Launching soon in MENA
+            LOADING........
           </p>
           
           {/* Newsletter Form */}
