@@ -4,121 +4,42 @@ import React from 'react';
 const SoundWaves: React.FC = () => {
   // Generate random delay values for each bar to desynchronize them
   const generateRandomDelay = () => Math.random() * 2; // 0-2 seconds delay
-  const generateRandomDuration = (base: number) => base + (Math.random() * 0.5 - 0.25); // ±0.25s variation
+
+  // Create bars with responsive count based on screen size
+  const createBars = (count: number) => {
+    return Array.from({ length: count }, (_, i) => {
+      const heights = [8, 12, 6, 16, 10, 14, 8, 18, 12, 20, 10, 16, 8, 24, 12, 20, 8, 16, 10, 14, 18, 10, 22, 14, 8, 12, 20, 10, 16, 8];
+      const animations = ['animate-wave-1', 'animate-wave-2', 'animate-wave-3', 'animate-wave-4', 'animate-wave-5'];
+      
+      const height = heights[i % heights.length];
+      const animation = animations[i % animations.length];
+      
+      return (
+        <div 
+          key={i}
+          className={`bar h-${height} ${animation}`} 
+          style={{ animationDelay: `${generateRandomDelay()}s` }}
+        />
+      );
+    });
+  };
 
   return (
-    <div className="sound-waves opacity-70 flex items-center justify-center gap-1.5 h-8 mt-0 mb-0 w-full">
-      <div className="bar h-8 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-6 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-24 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-22 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-24 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-22 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-24 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-22 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-24 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-22 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-24 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-20 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-14 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-18 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-12 animate-wave-5" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-22 animate-wave-2" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-10 animate-wave-4" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-16 animate-wave-1" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
-      <div className="bar h-8 animate-wave-3" style={{ animationDelay: `${generateRandomDelay()}s` }}></div>
+    <div className="w-full flex justify-center overflow-hidden mt-0 mb-0">
+      {/* Mobile: Show fewer bars */}
+      <div className="sound-waves opacity-70 flex items-center justify-center gap-1.5 h-8 sm:hidden">
+        {createBars(20)}
+      </div>
+      
+      {/* Tablet: Show medium number of bars */}
+      <div className="sound-waves opacity-70 hidden sm:flex lg:hidden items-center justify-center gap-1.5 h-8">
+        {createBars(40)}
+      </div>
+      
+      {/* Desktop: Show full number of bars */}
+      <div className="sound-waves opacity-70 hidden lg:flex items-center justify-center gap-1.5 h-8">
+        {createBars(80)}
+      </div>
     </div>
   );
 };
