@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -93,24 +92,39 @@ export default {
           to: { height: "0" },
         },
         "wave-1": {
-          "0%, 100%": { transform: "scaleY(0.5)" },
-          "50%": { transform: "scaleY(1)" },
+          "0%, 100%": { transform: "scaleY(0.3)" },
+          "25%": { transform: "scaleY(1.2)" },
+          "50%": { transform: "scaleY(0.6)" },
+          "75%": { transform: "scaleY(0.9)" },
         },
         "wave-2": {
-          "0%, 100%": { transform: "scaleY(0.3)" },
-          "50%": { transform: "scaleY(0.8)" },
+          "0%, 100%": { transform: "scaleY(0.8)" },
+          "20%": { transform: "scaleY(0.4)" },
+          "40%": { transform: "scaleY(1.3)" },
+          "60%": { transform: "scaleY(0.2)" },
+          "80%": { transform: "scaleY(1.1)" },
         },
         "wave-3": {
-          "0%, 100%": { transform: "scaleY(0.6)" },
-          "50%": { transform: "scaleY(1)" },
+          "0%, 100%": { transform: "scaleY(0.5)" },
+          "33%": { transform: "scaleY(1.4)" },
+          "66%": { transform: "scaleY(0.3)" },
         },
         "wave-4": {
           "0%, 100%": { transform: "scaleY(0.2)" },
-          "50%": { transform: "scaleY(0.5)" },
+          "15%": { transform: "scaleY(0.9)" },
+          "30%": { transform: "scaleY(0.6)" },
+          "45%": { transform: "scaleY(1.5)" },
+          "60%": { transform: "scaleY(0.4)" },
+          "75%": { transform: "scaleY(1.1)" },
+          "90%": { transform: "scaleY(0.7)" },
         },
         "wave-5": {
-          "0%, 100%": { transform: "scaleY(0.4)" },
-          "50%": { transform: "scaleY(0.9)" },
+          "0%, 100%": { transform: "scaleY(0.7)" },
+          "10%": { transform: "scaleY(1.3)" },
+          "30%": { transform: "scaleY(0.5)" },
+          "50%": { transform: "scaleY(1.6)" },
+          "70%": { transform: "scaleY(0.3)" },
+          "90%": { transform: "scaleY(1.0)" },
         },
         "pulse-slow": {
           "0%, 100%": { opacity: "0.6" },
@@ -134,11 +148,11 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "wave-1": "wave-1 1.3s infinite ease-in-out",
-        "wave-2": "wave-2 1.5s infinite ease-in-out",
-        "wave-3": "wave-3 1.7s infinite ease-in-out",
-        "wave-4": "wave-4 1.9s infinite ease-in-out",
-        "wave-5": "wave-5 2.1s infinite ease-in-out",
+        "wave-1": "wave-1 0.6s infinite ease-in-out",
+        "wave-2": "wave-2 0.4s infinite ease-in-out",
+        "wave-3": "wave-3 0.8s infinite ease-in-out",
+        "wave-4": "wave-4 0.3s infinite ease-in-out",
+        "wave-5": "wave-5 0.5s infinite ease-in-out",
         "pulse-slow": "pulse-slow 3s infinite",
         "fade-in": "fade-in 0.5s ease-out",
         "marquee": "marquee 20s linear infinite",
