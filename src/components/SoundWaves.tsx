@@ -27,18 +27,18 @@ const SoundWaves: React.FC = () => {
   return (
     <div className="w-full flex justify-center overflow-hidden mt-0 mb-0">
       {/* Mobile: Show fewer bars */}
-      <div className="sound-waves opacity-70 flex items-center justify-center gap-1.5 h-8 sm:hidden">
-        {createBars(20)}
+      <div className="sound-waves opacity-70 flex items-center justify-center gap-1.5 h-8 w-full sm:hidden">
+        {createBars(25)}
       </div>
       
       {/* Tablet: Show medium number of bars */}
-      <div className="sound-waves opacity-70 hidden sm:flex lg:hidden items-center justify-center gap-1.5 h-8">
-        {createBars(40)}
+      <div className="sound-waves opacity-70 hidden sm:flex lg:hidden items-center justify-center gap-1.5 h-8 w-full">
+        {createBars(60)}
       </div>
       
-      {/* Desktop: Show full number of bars */}
-      <div className="sound-waves opacity-70 hidden lg:flex items-center justify-center gap-1.5 h-8">
-        {createBars(80)}
+      {/* Desktop: Show full number of bars to fill screen */}
+      <div className="sound-waves opacity-70 hidden lg:flex items-center justify-center gap-1.5 h-8 w-full">
+        {createBars(120)}
       </div>
     </div>
   );
